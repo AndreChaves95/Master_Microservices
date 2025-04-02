@@ -1,0 +1,10 @@
+package com.mybank.accounts.repository;
+
+import com.mybank.accounts.entity.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository  // Spring annotation to indicate that this class is a repository and should be managed by the Spring container
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
+// JpaRepository is a JPA specific extension of the Repository interface that adds support for JPA and receives two parameters: the entity type and the type of the primary key
+}
