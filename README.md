@@ -27,3 +27,16 @@ Docker, Kubernetes, Helm, including Microservices Security
 - A design pattern used to transfer data between different layers of an application.
 - DTOs are used to encapsulate data and reduce the number of method calls, improving performance and maintainability.
 - DTOs are typically used in conjunction with service classes and repositories to transfer data between the database and the presentation layer.
+
+
+## REST API
+### Controller
+- The controller is responsible for handling HTTP requests and responses.
+- @RestController annotation to indicate that it is a REST controller.
+- @RequestMapping annotation to specify the base URL for the controller.
+- produces attribute to specify the response type (application/json).
+
+### Service
+- The service layer contains the business logic of the application.
+- It is responsible for processing requests from the controller and interacting with the repository layer.
+- @Service annotation to indicate that it is a service class.
