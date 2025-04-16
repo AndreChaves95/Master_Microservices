@@ -40,3 +40,20 @@ Docker, Kubernetes, Helm, including Microservices Security
 - The service layer contains the business logic of the application.
 - It is responsible for processing requests from the controller and interacting with the repository layer.
 - @Service annotation to indicate that it is a service class.
+
+### Repository
+- The repository layer is responsible for interacting with the database and for defining custom queries using JPQL or native SQL.
+- It uses Spring Data JPA to perform CRUD operations on the database.
+- @Repository annotation to indicate that it is a repository class.
+- It extends the JpaRepository interface to provide basic CRUD operations.
+
+
+## Exception Handling
+- CustomerAlreadyExistsException: Thrown when a customer with the same email or same mobile number already exists in the database.
+
+### Global Exception Handler
+- @ControllerAdvice annotation to indicate that it is a global exception handler.
+- With this annotation, we can handle exceptions globally across all controllers in the application.
+- Every exception thrown by the controller will be handled by this class.
+- @ExceptionHandler annotation to specify the method that will handle the exception.
+- ResponseEntity class to return a custom error response with a status code and message.
