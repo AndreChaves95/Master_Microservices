@@ -27,6 +27,11 @@ Docker, Kubernetes, Helm, including Microservices Security
 - A design pattern used to transfer data between different layers of an application.
 - DTOs are used to encapsulate data and reduce the number of method calls, improving performance and maintainability.
 - DTOs are typically used in conjunction with service classes and repositories to transfer data between the database and the presentation layer.
+- 
+#### DTOs in this project
+- CustomerDTO is used to transfer data about the customer, including their name, email, and mobile number.
+- AccountDTO is used to transfer data about the customer's accounts, including the account number, account type, and address.
+- CustomerDTO uses AccountDTO so that it can transfer data about the customer and their accounts in a single object.
 
 
 ## REST API
