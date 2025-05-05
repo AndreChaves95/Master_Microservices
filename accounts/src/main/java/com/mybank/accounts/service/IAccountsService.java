@@ -1,0 +1,15 @@
+package com.mybank.accounts.service;
+
+import com.mybank.accounts.dto.CustomerDto;
+
+public interface IAccountsService {
+
+    void createCustomerAccount(CustomerDto customerDto);
+
+    CustomerDto getAccountDetails(String mobileNumber);
+
+    boolean updateCustomerAccount(CustomerDto customerDto);
+
+    boolean deleteCustomerAccount(String mobileNumber);
+
+}
