@@ -52,6 +52,15 @@ Docker, Kubernetes, Helm, including Microservices Security
 - @Repository annotation to indicate that it is a repository class.
 - It extends the JpaRepository interface to provide basic CRUD operations.
 
+##### @Transactional
+- The @Transactional annotation is used to define the transaction boundaries for a method or class.
+- It ensures that all database operations within the annotated method or class are executed within a single transaction.
+- If any operation fails, the transaction is rolled back, ensuring data consistency.
+
+###### @Modifying
+- The @Modifying annotation is used to indicate that a method modifies the database (e.g., insert, update, delete).
+- It is typically used in conjunction with the @Query annotation to define custom queries that modify the database.
+
 
 ## Exception Handling
 - CustomerAlreadyExistsException: Thrown when a customer with the same email or same mobile number already exists in the database.

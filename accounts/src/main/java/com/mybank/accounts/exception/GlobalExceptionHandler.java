@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponseDto> handleCustomerAlreadyExistsException(CustomerAlreadyExistsException exception,
                                                                                  WebRequest webRequest){
         ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
-                webRequest.getDescription(false),
+                webRequest.getContextPath(),
                 HttpStatus.BAD_REQUEST,
                 exception.getMessage(),
                 LocalDateTime.now()
@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponseDto> handleResourceNotFoundException(ResourceNotFoundException exception,
                                                                             WebRequest webRequest) {
         ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
-                webRequest.getDescription(false),
+                webRequest.getContextPath(),
                 HttpStatus.NOT_FOUND,
                 exception.getMessage(),
                 LocalDateTime.now()

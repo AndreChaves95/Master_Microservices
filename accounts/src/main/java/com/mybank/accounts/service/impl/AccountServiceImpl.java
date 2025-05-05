@@ -62,4 +62,37 @@ public class AccountServiceImpl implements IAccountsService {
         customerDto.setAccountsDto(AccountsMapper.mapToAccountsDto(account, new AccountsDto()));
         return customerDto;
     }
+
+    @Override
+    public boolean updateCustomerAccount(CustomerDto customerDto) {
+        boolean isUpdated = false;
+        AccountsDto accountsDto = customerDto.getAccountsDto();
+        if(accountsDto != null ){
+            Accounts accounts = accountsRepository.findById(accountsDto.getAccountNumber()).orElseThrow(
+                    () -> new ResourceNotFoundException("Account", "AccountNumber", accountsDto.getAccountNumber().toString())
+            );
+            AccountsMapper.mapToAccounts(accountsDto, accounts);
+            accounts = accountsRepository.save(accounts);
+
+            Long customerId = accounts.getCustomerId();
+            Customer customer = customerRepository.findById(customerId).orElseThrow(
+                    () -> new ResourceNotFoundException("Customer", "CustomerID", customerId.toString())
+            );
+            CustomerMapper.mapToCustomer(customerDto,customer);
+            customerRepository.save(customer);
+            isUpdated = true;
+        }
+        return  isUpdated;
+    }
+
+    @Override
+    public boolean deleteCustomerAccount(String mobileNumber) {
+        Customer customer = customerRepository.findByMobileNumber(mobileNumber)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber));
+        // deleteByCustomerId requires @Transactional and @Modifying annotations in the repository because it modifies the database and its not a default method of JpaRepository
+        accountsRepository.deleteByCustomerId(customer.getCustomerId()); // Delete account associated with the customer
+        // deleteById is a default method of JpaRepository and does not require @Transactional and @Modifying annotations
+        customerRepository.deleteById(customer.getCustomerId()); // Delete the customer
+        return true;
+    }
 }
