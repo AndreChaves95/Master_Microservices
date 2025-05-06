@@ -57,7 +57,7 @@ Docker, Kubernetes, Helm, including Microservices Security
 - It ensures that all database operations within the annotated method or class are executed within a single transaction.
 - If any operation fails, the transaction is rolled back, ensuring data consistency.
 
-###### @Modifying
+##### @Modifying
 - The @Modifying annotation is used to indicate that a method modifies the database (e.g., insert, update, delete).
 - It is typically used in conjunction with the @Query annotation to define custom queries that modify the database.
 
@@ -71,3 +71,21 @@ Docker, Kubernetes, Helm, including Microservices Security
 - Every exception thrown by the controller will be handled by this class.
 - @ExceptionHandler annotation to specify the method that will handle the exception.
 - ResponseEntity class to return a custom error response with a status code and message.
+- The handleCustomerAlreadyExistsException method handles the CustomerAlreadyExistsException and returns an exception with a custom error message.
+- The handleResourceNotFoundException method handles the ResourceNotFoundException and returns a custom error message.
+- The handleException method handles all other exceptions and returns a generic error message.
+
+
+## Validations
+
+### DTO Validations
+- @NotEmpty: Ensures that the annotated field is not null or empty.
+- @Email: Ensures that the annotated field is a valid email address.
+- @Pattern: Ensures that the annotated field matches a specified regular expression pattern.
+- @Size: Ensures that the annotated field has a specified size (minimum and maximum).
+- CustomerDTO and AccountDTO classes use these annotations to validate the input data.
+
+### Controller Validations
+- @Validated: Used to trigger validation on the annotated class or method.
+- @Validated annotation is used in the controller to validate the input data before processing it.
+- @Valid: Used to trigger validation on the annotated method parameter.
