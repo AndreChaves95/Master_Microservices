@@ -74,3 +74,18 @@ Docker, Kubernetes, Helm, including Microservices Security
 - The handleCustomerAlreadyExistsException method handles the CustomerAlreadyExistsException and returns an exception with a custom error message.
 - The handleResourceNotFoundException method handles the ResourceNotFoundException and returns a custom error message.
 - The handleException method handles all other exceptions and returns a generic error message.
+
+
+## Validations
+
+### DTO Validations
+- @NotEmpty: Ensures that the annotated field is not null or empty.
+- @Email: Ensures that the annotated field is a valid email address.
+- @Pattern: Ensures that the annotated field matches a specified regular expression pattern.
+- @Size: Ensures that the annotated field has a specified size (minimum and maximum).
+- CustomerDTO and AccountDTO classes use these annotations to validate the input data.
+
+### Controller Validations
+- @Validated: Used to trigger validation on the annotated class or method.
+- @Validated annotation is used in the controller to validate the input data before processing it.
+- @Valid: Used to trigger validation on the annotated method parameter.
