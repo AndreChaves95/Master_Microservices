@@ -12,6 +12,17 @@ import org.springframework.web.context.request.WebRequest;
 @ControllerAdvice // This annotation is used to handle exceptions globally across the application
 public class GlobalExceptionHandler {
 
+    @ExceptionHandler(Exception.class) // This method will handle all exceptions that are not handled by other methods
+    public ResponseEntity<ErrorResponseDto> handleGlobalException(Exception exception, WebRequest webRequest){
+        ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
+                webRequest.getContextPath(),
+                HttpStatus.INTERNAL_SERVER_ERROR,
+                exception.getMessage(),
+                LocalDateTime.now()
+        );
+        return new ResponseEntity<>(errorResponseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
     @ExceptionHandler(CustomerAlreadyExistsException.class)
     public ResponseEntity<ErrorResponseDto> handleCustomerAlreadyExistsException(CustomerAlreadyExistsException exception,
                                                                                  WebRequest webRequest){
