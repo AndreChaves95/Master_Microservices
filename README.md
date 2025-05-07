@@ -8,6 +8,15 @@ Docker, Kubernetes, Helm, including Microservices Security
 
 - Accounts has a foreign key to table Customer (customer_id)
 
+### Entities
+- Customer: Represents a customer in the system.
+- Accounts: Represents an account associated with a customer.
+- CustomerAccount: Represents the relationship between a customer and their accounts.
+- @CreatedDate: Automatically sets the created_at field to the current date and time when a new entity is created.
+- @LastModifiedDate: Automatically sets the updated_at field to the current date and time when an entity is updated.
+- @CreatedBy: Automatically sets the created_by field to the user who created the entity.
+- @LastModifiedBy: Automatically sets the updated_by field to the user who last modified the entity.
+
 
 ## Spring Boot Annotations
 #### @SpringBootApplication: 
@@ -21,6 +30,8 @@ Docker, Kubernetes, Helm, including Microservices Security
 - Marks the class as a JPA entity, allowing it to be mapped to a database table.
 #### @Repository: 
 - Indicates that the class is a Spring Data repository, allowing it to perform CRUD operations on the database.
+#### @EnableJpaAuditing:
+- Enables JPA auditing, allowing the use of @CreatedDate, @LastModifiedDate, @CreatedBy, and @LastModifiedBy annotations.
 
 
 ## DTO(Data Transfer Object) Pattern
@@ -51,6 +62,9 @@ Docker, Kubernetes, Helm, including Microservices Security
 - It uses Spring Data JPA to perform CRUD operations on the database.
 - @Repository annotation to indicate that it is a repository class.
 - It extends the JpaRepository interface to provide basic CRUD operations.
+- deleteById() is a method provided by the JpaRepository interface to delete an entity by its ID.
+- deleteByCustomerId() is a custom method defined in the repository interface to delete accounts by customer ID 
+(requires @Modifying and @Transactional annotations).
 
 ##### @Transactional
 - The @Transactional annotation is used to define the transaction boundaries for a method or class.
@@ -89,3 +103,18 @@ Docker, Kubernetes, Helm, including Microservices Security
 - @Validated: Used to trigger validation on the annotated class or method.
 - @Validated annotation is used in the controller to validate the input data before processing it.
 - @Valid: Used to trigger validation on the annotated method parameter.
+
+
+## Audit Columns
+- Audit columns are used to track the creation and modification of entities in the database.
+- They are typically used to store metadata about the entity, such as the user who created or modified it and the date and time of the operation.
+##### AccountsApplication 
+- This class is annotated with @EnableJpaAuditing to enable JPA auditing.
+##### BaseEntity
+- This class contains the audit columns (created_at, created_by, updated_at, updated_by) 
+and is annotated with @EntityListeners(AuditingEntityListener.class) to enable auditing.
+- The @CreatedDate and @LastModifiedDate annotations are used to automatically set the created_at and updated_at fields.
+- The @CreatedBy and @LastModifiedBy annotations are used to automatically set the created_by and updated_by fields.
+##### AuditAwareImpl
+- This class implements the AuditorAware interface to provide the current user for auditing purposes.
+- It uses the SecurityContextHolder to retrieve the current user from the security context.
