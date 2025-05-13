@@ -118,3 +118,11 @@ and is annotated with @EntityListeners(AuditingEntityListener.class) to enable a
 ##### AuditAwareImpl
 - This class implements the AuditorAware interface to provide the current user for auditing purposes.
 - It uses the SecurityContextHolder to retrieve the current user from the security context.
+
+
+## Documentation
+
+#### OpenAPI
+- OpenAPI is a specification for documenting RESTful APIs.
+- It provides a standard way to describe the API endpoints, request and response formats, and authentication methods.
+- Added dependency for OpenAPI in the pom.xml file.
