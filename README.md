@@ -3,9 +3,10 @@
 Docker, Kubernetes, Helm, including Microservices Security
 
 ## DB Entities Structure
-- Customer: customer_id (PK), name, email, mobile_number, created_at, created_by, updated_at, updated_by
-- Accounts: account_number (PK), customer_id (FK), account_type, address, created_at, created_by, updated_at, updated_by
-
+##### Customer: 
+- customer_id (PK), name, email, mobile_number, created_at, created_by, updated_at, updated_by
+##### Accounts: 
+- account_number (PK), customer_id (FK), account_type, address, created_at, created_by, updated_at, updated_by
 - Accounts has a foreign key to table Customer (customer_id)
 
 ### Entities
@@ -118,3 +119,24 @@ and is annotated with @EntityListeners(AuditingEntityListener.class) to enable a
 ##### AuditAwareImpl
 - This class implements the AuditorAware interface to provide the current user for auditing purposes.
 - It uses the SecurityContextHolder to retrieve the current user from the security context.
+
+
+## Documentation - OpenAPI
+
+- OpenAPI is a specification for documenting RESTful APIs.
+- It provides a standard way to describe the API endpoints, request and response formats, and authentication methods.
+- Added dependency for OpenAPI in the pom.xml file.
+
+#### Annotations
+##### @OpenAPIDefinition 
+- annotation to the main application class to specify the API information.
+##### @Tag 
+- annotation to the controller class to group the API endpoints.
+##### @Operation 
+- annotation to the controller methods to provide additional information about the API endpoints.
+##### @ApiResponse 
+- annotation to the controller methods to specify the response status and description.
+##### @Schema
+- annotation to the DTO classes to provide additional information about the request and response formats.
+##### @Content
+- annotation to specify the request and response content types.
