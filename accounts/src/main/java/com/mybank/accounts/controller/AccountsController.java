@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@Tag(name = "REST API - CRUD Operations", description = "Accounts microservice REST API documentation") // Tag for OpenAPI documentation
+@Tag(name = "REST API - CRUD Operations for Accounts", description = "Accounts microservice REST API documentation") // Tag for OpenAPI documentation
 @RestController
 @RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE) // REST API will support responses compatible with JSON type
 @AllArgsConstructor
