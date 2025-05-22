@@ -1,0 +1,16 @@
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/LoansApplication.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/audit/AuditAwareImpl.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/constants/LoansConstants.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/controller/LoansController.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/dto/ErrorResponseDto.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/dto/LoansDto.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/dto/ResponseDto.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/entity/BaseEntity.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/entity/Loans.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/exception/GlobalExceptionHandler.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/exception/LoanAlreadyExistsException.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/exception/ResourceNotFoundException.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/mapper/LoansMapper.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/repository/LoansRepository.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/service/ILoansService.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/loans/src/main/java/com/example/loans/service/impl/LoansServiceImpl.java

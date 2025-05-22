@@ -1,0 +1,16 @@
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/CardsApplication.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/audit/AuditAwareImpl.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/constants/CardsConstants.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/controller/CardsController.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/dto/CardsDto.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/dto/ErrorResponseDto.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/dto/ResponseDto.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/entity/BaseEntity.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/entity/Cards.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/exception/CardAlreadyExistsException.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/exception/GlobalExceptionHandler.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/exception/ResourceNotFoundException.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/mapper/CardsMapper.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/repository/CardsRepository.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/service/ICardsService.java
+/Users/andre.chaves/Desktop/Master_Microservices/MicroservicesProject/cards/src/main/java/com/example/cards/service/impl/CardsServiceImpl.java
