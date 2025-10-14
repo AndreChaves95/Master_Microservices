@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-@EnableJpaAuditing(auditorAwareRef = "auditAwareImpl") // Enables JPA Auditing, which allows us to automatically populate auditing fields (like createdAt, updatedAt) in our entities
+@EnableJpaAuditing(auditorAwareRef = "auditAwareImpl") // Enables JPA Auditing, which allows to automatically populate auditing fields (like createdAt, updatedAt) on entities
 @OpenAPIDefinition(info = @Info(title = "Accounts microservice REST API documentation",
 		description = "REST API for managing accounts",
 		version = "1.0",
