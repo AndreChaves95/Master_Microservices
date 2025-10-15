@@ -14,3 +14,13 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  config:
+    import:
+      - "application-int.yml"
+      - "application-prod.yml"
+  profiles:
+    active:
+      - "int"   # default profile
+
+  build:
+    version: "1.0"

@@ -1,0 +1,10 @@
+spring:
+  config:
+    activate:
+      on-profile: "int"
+
+build:
+  version: "2.0"
+
+accounts:
+  message: "This is INTEGRATION environment"

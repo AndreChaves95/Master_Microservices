@@ -13,6 +13,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -29,11 +30,19 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "REST API - CRUD Operations for Accounts", description = "Accounts microservice REST API documentation") // Tag for OpenAPI documentation
 @RestController
 @RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE) // REST API will support responses compatible with JSON type
-@AllArgsConstructor
 @Validated
 public class AccountsController {
 
-    private IAccountsService accountsService;
+    private final IAccountsService accountsService;
+
+    @Value("${spring.build.version}")
+    private String buildVersion;
+
+    // Instead of AllArgsConstructor, using explicit constructor for better clarity and dependency injection
+    // String buildVersion will be injected from application properties
+    public AccountsController(IAccountsService accountsService) {
+        this.accountsService = accountsService;
+    }
 
     @GetMapping("/hello")
     public String helloWorld() {
@@ -118,5 +127,13 @@ public class AccountsController {
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(new ResponseDto(AccountsConstants.STATUS_500, AccountsConstants.MESSAGE_500));
         }
+    }
+
+
+    @GetMapping("/build-info")
+    public ResponseEntity<String> getBuildInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(buildVersion);
     }
 }

@@ -14,3 +14,13 @@ spring:
     hibernate:
       ddl-auto: update     # automatically create tables based on entities in the project
     show-sql: true
+  config:
+    import:
+      - "application-int.yml"
+      - "application-prod.yml"
+  profiles:
+    active:
+      - "int"   # default profile
+
+  build:
+    version: "1.0"
