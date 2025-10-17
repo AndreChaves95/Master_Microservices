@@ -33,6 +33,8 @@
         <option value="$PROJECT_DIR$/cards/pom.xml" />
         <option value="$PROJECT_DIR$/loans/pom.xml" />
         <option value="$PROJECT_DIR$/eurekaserver/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-gateway-server/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
